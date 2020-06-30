@@ -17,11 +17,11 @@
     "url": "git+https://github.com/maximilianMairinger/xtring.git"
   },
   "keywords": [
-  "string",
-  "prototype",
-  "enhancement",
-  "util"
-],
+    "string",
+    "prototype",
+    "enhancement",
+    "util"
+  ],
   "author": "Maximilian Mairinger",
   "license": "ISC",
   "bugs": {
