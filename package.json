@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "String prototype enhancements.",
   "main": "app/dist/xtring.js",
-  "types": "app/dist/xtring.d.ts",
+  "types": "xtring.d.ts",
   "scripts": {
     "build": "tsc -p ./tsconfig.prod.json",
     "dev": "npm run devWeb",
