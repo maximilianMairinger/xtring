@@ -12,6 +12,11 @@ declare global {
      */
     splice(index: number, count: number, ...add: string[]): string
 
+    /**
+     * Capitalizes the first letter of this string
+     */
+    capitalize(): string
+
   }
   
 }
