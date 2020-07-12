@@ -1,6 +1,6 @@
 {
   "name": "xtring",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "String prototype enhancements.",
   "main": "app/dist/xtring.js",
   "types": "xtring.d.ts",
