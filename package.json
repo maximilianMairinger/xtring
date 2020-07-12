@@ -10,7 +10,8 @@
     "devWeb": "rollup --config rollup.web.dev.config.js -w",
     "devServer": "rollup --config rollup.server.dev.config.js -w",
     "deploy": "npm run build && npm publish",
-    "test": "node ./test/dist/test-bundle"
+    "test": "node ./test/dist/test-bundle",
+    "repl": "node repl/dist/xtring"
   },
   "repository": {
     "type": "git",
