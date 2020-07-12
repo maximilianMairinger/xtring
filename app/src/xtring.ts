@@ -11,4 +11,8 @@ export default function(StringConstructor: { new(...a: any): String } = String) 
     }
     return this.slice(0, index) + (add.join("") || "") + this.slice(index + count);
   })
+
+  as("capitalize", function() {
+    return this[0].toUpperCase() + this.slice(1);
+  })
 }
