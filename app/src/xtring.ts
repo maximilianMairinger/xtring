@@ -15,4 +15,22 @@ export default function(StringConstructor: { new(...a: any): String } = String) 
   as("capitalize", function() {
     return this[0].toUpperCase() + this.slice(1);
   })
+
+  as("isUpperCase", function() {
+    return this.toUpperCase() === this
+  })
+
+  as("isLowerCase", function() {
+    return this.toLowerCase() === this
+  })
+
+  as("hasUpperCase", function() {
+    return !this.isLowerCase()
+  })
+
+  as("hasLowerCase", function() {
+    return !this.isUpperCase()
+  })
 }
+
+
