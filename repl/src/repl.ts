@@ -3,3 +3,5 @@ import xtring from "./../../app/src/xtring"
 
 xtring()
 
+console.log("hello".hasUpperCase(), "qw")
+
