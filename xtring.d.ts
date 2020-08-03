@@ -17,6 +17,26 @@ declare global {
      */
     capitalize(): string
 
+    /**
+     * True when all characters are uppercase
+     */
+    isUpperCase(): boolean
+
+    /**
+     * True when all characters are lowercase
+     */
+    isLowerCase(): boolean
+
+    /**
+     * True when at least one character is uppercase
+     */
+    hasUpperCase(): boolean
+
+    /**
+     * True when at least one character is lowercase
+     */
+    hasLowerCase(): boolean
+
   }
   
 }
