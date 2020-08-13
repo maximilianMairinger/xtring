@@ -1,4 +1,4 @@
-# [nameWithSpaces]
+# Xtring
 
 String prototype enhancements.
 
