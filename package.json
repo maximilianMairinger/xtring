@@ -2,10 +2,19 @@
   "name": "xtring",
   "version": "1.2.0",
   "description": "String prototype enhancements.",
-  "main": "app/dist/xtring.js",
+  "main": "./app/dist/esm/xtring.js",
   "types": "xtring.d.ts",
+  "exports": {
+    "node": {
+      "import": "./app/dist/esm/xtring.js",
+      "require": "./app/dist/cjs/xtring.js"
+    },
+    "default": "./app/dist/esm/xtring.js"
+  },
   "scripts": {
-    "build": "tsc -p ./tsconfig.prod.json",
+    "build": "npm run buildESM; npm run buildCJS",
+    "buildESM": "tsc -p ./tsconfig.prod.esm.json",
+    "buildCJS": "tsc -p ./tsconfig.prod.cjs.json",
     "dev": "npm run devWeb",
     "devWeb": "rollup --config rollup.web.dev.config.js -w",
     "devServer": "rollup --config rollup.server.dev.config.js -w",
