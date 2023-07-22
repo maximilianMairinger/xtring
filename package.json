@@ -2,19 +2,20 @@
   "name": "xtring",
   "version": "1.2.1",
   "description": "String prototype enhancements.",
-  "main": "./app/dist/esm/xtring.js",
+  "main": "./app/dist/esm/xtring.mjs",
   "types": "xtring.d.ts",
   "exports": {
     "node": {
-      "import": "./app/dist/esm/xtring.js",
+      "import": "./app/dist/esm/xtring.mjs",
       "require": "./app/dist/cjs/xtring.js"
     },
-    "default": "./app/dist/esm/xtring.js"
+    "default": "./app/dist/esm/xtring.mjs"
   },
   "scripts": {
-    "build": "npm run buildESM; npm run buildCJS",
-    "buildESM": "tsc -p ./tsconfig.prod.esm.json",
-    "buildCJS": "tsc -p ./tsconfig.prod.cjs.json",
+    "build": "del-cli app/dist && concurrently \"npm run buildESM\" \"npm run buildCJS\" --raw",
+    "buildESM": "tsc -p ./tsconfig.prod.esm.json && mjsify app/dist esm cjs",
+    "buildCJS": "tsc -p ./tsconfig.prod.cjs.json && npm run buildCJS2",
+    "buildCJS2": "rollup --config rollup.node.prod.config.mjs",
     "dev": "npm run devWeb",
     "devWeb": "rollup --config rollup.web.dev.config.js -w",
     "devServer": "rollup --config rollup.server.dev.config.js -w",
@@ -39,14 +40,18 @@
   },
   "homepage": "https://github.com/maximilianMairinger/xtring#readme",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^13.0.0",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^8.1.0",
-    "@rollup/plugin-typescript": "^5.0.0",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-typescript": "^11.1.1",
     "@types/node": "^13.13.4",
-    "rollup": "^2.18.1",
+    "builtins": "^5.0.1",
+    "concurrently": "^8.2.0",
+    "del-cli": "^5.0.0",
+    "mjsify": "^2.0.8",
+    "rollup": "^3.23.1",
     "tslib": "^2.0.0",
-    "typescript": "^3.9.5",
+    "typescript": "^5.0.4",
     "webpack-merge": "^5.0.9"
   },
   "dependencies": {
